@@ -6,10 +6,13 @@ export default function FeaturedPosts(props) {
   if (!posts || posts.length === 0) {
     return <p>No posts available.</p>;
   }
+
+  const limitedPosts = posts.slice(0, 3);
+
   return (
     <section className={classes.latest}>
       <h2>Featured Posts</h2>
-      <PostsGrid posts={props.posts} />
+      <PostsGrid posts={limitedPosts} />
     </section>
   );
 }
